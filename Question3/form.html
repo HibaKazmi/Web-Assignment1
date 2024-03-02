@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <form id="jobApplicationForm">
+                <h2>Job Application Form</h2>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required />
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required />
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="03[0-9]{2}-[0-9]{7}" placeholder="Format: 03XX-XXXXXXX" />
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required />
+                    <label for="street">Street Address:</label>
+                    <input type="text" id="street" name="street" required />
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required />
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" required />
+                    <label for="zip">ZIP Code:</label>
+                    <input type="text" id="zip" name="zip" required />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Resume and Cover Letter</legend>
+                    <label for="resume">Upload Resume:</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+                    <label for="coverLetter">Upload Cover Letter:</label>
+                    <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" required />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Education</legend>
+                    <label for="educationLevel">Highest Level of Education Attained:</label>
+                    <input type="text" id="educationLevel" name="educationLevel" required />
+                    <label for="schoolName">Name of School/University:</label>
+                    <input type="text" id="schoolName" name="schoolName" required />
+                    <label for="major">Major/Area of Study:</label>
+                    <input type="text" id="major" name="major" required />
+                    <label for="graduationYear">Graduation Year:</label>
+                    <input type="text" id="graduationYear" name="graduationYear" required />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Employment History</legend>
+                    <label for="jobTitle">Previous Job Titles:</label>
+                    <input type="text" id="jobTitle" name="jobTitle" required />
+                    <label for="companyName">Company Names:</label>
+                    <input type="text" id="companyName" name="companyName" required />
+                    <label for="employmentDates">Employment Dates:</label>
+                    <input type="text" id="employmentDates" name="employmentDates" required />
+                    <label for="jobResponsibilities">Job Responsibilities:</label>
+                    <textarea id="jobResponsibilities" name="jobResponsibilities" rows="5" required ></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Skills</legend>
+                    <label for="relevantSkills">Relevant Skills:</label>
+                    <input type="text" id="relevantSkills" name="relevantSkills" required />
+                    <label for="certifications">Certifications:</label>
+                    <input type="text" id="certifications" name="certifications" />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Availability</legend>
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" name="startDate" required />
+                    <label for="workSchedule">Preferred Work Schedule:</label>
+                    <input type="text" id="workSchedule" name="workSchedule" required />
+                    <label for="relocate">Willingness to Relocate:</label>
+                    <select id="relocate" name="relocate" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>References</legend>
+                    <label for="referenceName">Reference Name:</label>
+                    <input type="text" id="referenceName" name="referenceName" required />
+                    <label for="referenceContact">Reference Contact Information:</label>
+                    <input type="text" id="referenceContact" name="referenceContact" required />
+                    <label for="relationship">Relationship to Applicant:</label>
+                    <input type="text" id="relationship" name="relationship" required />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Questions</legend>
+                    <label for="whyWorkHere">Why do you want to work for this company?</label>
+                    <textarea id="whyWorkHere" name="whyWorkHere" rows="5" required ></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Consent and Agreement</legend>
+                    <label>
+                        <input type="checkbox" required />
+                        I agree to the terms and conditions
+                    </label>
+                    <label>
+                        <input type="checkbox" required />
+                        I acknowledge the privacy policy
+                    </label>
+                </fieldset>
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <button id="viewAsTableBtn">View Applications as Table</button>
+    <button id="hideApplicationsBtn" style="display: none">Hide Applications</button>
+
+    <div class="table-container">
+        <table id="applicationsTable" style="display: none">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Street Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>ZIP Code</th>
+                    <th>Resume File</th>
+                    <th>Cover Letter File</th>
+                    <th>Highest Education Level</th>
+                    <th>School/University</th>
+                    <th>Major/Area of Study</th>
+                    <th>Graduation Year</th>
+                    <th>Previous Job Titles</th>
+                    <th>Company Names</th>
+                    <th>Employment Dates</th>
+                    <th>Job Responsibilities</th>
+                    <th>Relevant Skills</th>
+                    <th>Certifications</th>
+                    <th>Start Date</th>
+                    <th>Preferred Work Schedule</th>
+                    <th>Willingness to Relocate</th>
+                    <th>Reference Name</th>
+                    <th>Reference Contact Information</th>
+                    <th>Relationship to Applicant</th>
+                    <th>Why Work Here?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table populated dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const savedApplications = JSON.parse(localStorage.getItem("applications")) || [];
+
+        const applicationsTable = document.getElementById("applicationsTable");
+        const tbody = applicationsTable.querySelector("tbody");
+        savedApplications.forEach((application) => {
+            const tr = document.createElement("tr");
+            Object.values(application).forEach((value) => {
+                const td = document.createElement("td");
+                td.textContent = value;
+                tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+        });
+
+        document.getElementById("jobApplicationForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const phoneNumberInput = document.getElementById("phoneNumber");
+            const phoneNumberPattern = /^(03[0-9]{2}-[0-9]{7})$/;
+            if (!phoneNumberPattern.test(phoneNumberInput.value)) {
+                alert("Please enter a valid Pakistani phone number in the format 03XX-XXXXXXX");
+                phoneNumberInput.focus();
+                return false;
+            }
+
+            const formData = new FormData(this);
+            let data = {};
+            for (const [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            savedApplications.push(data);
+            localStorage.setItem("applications", JSON.stringify(savedApplications));
+            this.reset();
+        });
+
+        document.getElementById("viewAsTableBtn").addEventListener("click", function () {
+            tbody.innerHTML = "";
+            savedApplications.forEach((application) => {
+                const tr = document.createElement("tr");
+                Object.values(application).forEach((value) => {
+                    const td = document.createElement("td");
+                    td.textContent = value;
+                    tr.appendChild(td);
+                });
+                tbody.appendChild(tr);
+            });
+            applicationsTable.style.display = "table";
+            document.getElementById("hideApplicationsBtn").style.display = "inline";
+            this.style.display = "none";
+        });
+
+        document.getElementById("hideApplicationsBtn").addEventListener("click", function () {
+            applicationsTable.style.display = "none";
+            document.getElementById("viewAsTableBtn").style.display = "inline";
+            this.style.display = "none";
+        });
+    </script>
+</body>
+</html>
